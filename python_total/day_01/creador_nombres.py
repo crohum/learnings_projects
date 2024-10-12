@@ -7,6 +7,7 @@ La instruccion para este ejercicio es:
   y continuando con el "nombre" generado por las entradas entre comillas.
 """
 
+
 print('\nLa cerveza se llama: \n'
       + '"'
       + input('¿Cual es tu fruta favorita? ')

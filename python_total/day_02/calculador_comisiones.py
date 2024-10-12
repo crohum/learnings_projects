@@ -9,6 +9,7 @@ La instruccion para este ejercicio es:
   son: $CANTIDAD CALCULADA"
 """
 
+
 print('Excelente dia.'
       '\nPara conocer tu monto obtenido por la comision correspondiente a tus ventas,'
       '\nsigue los siguentes pasos:')
