@@ -2,8 +2,8 @@
 La instruccion para este ejercicio es:
 
 * Crear un programa que pida dos entradas de dato al usuario,
-    una es su nombre, y la otra
-    una cantidad.
+    - una es su nombre, y la otra
+    - una cantidad.
 * El programa debe de calcular el 13% de la cantidad ingresada, redondeado a 2 decimas.
 * Mostrarlo en pantalla, usando una frase similar a "Felicidades "NOMBRE", tus comisiones de este mes
   son: $CANTIDAD CALCULADA"
