@@ -29,7 +29,7 @@ print(f'Te recuerdo que puedes encontrar las recetas en:\n"{ruta_base}"')
 n_recetas = -1
 
 for txt in Path(ruta_base).glob('**/*.txt'):
-    n_recetas +=1
+    n_recetas += 1
 print(f'Actualmente tienes {n_recetas} recetas disponibles.')
 input('Presiona enter para entrar al menu.')
 
