@@ -20,7 +20,7 @@ from os import system
 from pathlib import Path
 
 
-ruta_base = Path('D:/Ejercicios Python/pythonProject/curso_python_total/Recetas')
+ruta_base = Path('D:/Proyectos Python/Zzz_learnings_projects/python_total/day_06/Recetas')
 
 saludo = Path(ruta_base, 'saludo.txt')
 print(saludo.read_text())
@@ -59,13 +59,13 @@ def crear_receta(categoria):
     if receta_nva in receta_lista:
         print('Esa receta ya existe')
     else:
-        receta_creada = Path(ruta_base, categoria, receta_nva+'.txt')
+        receta_creada = Path(ruta_base, categoria, receta_nva + '.txt')
         receta_creada.touch()
 
 
 def elegir_categoria():
     correcto = False
-    while correcto == False:
+    while not correcto:
         categ_ruta = [c for c in ruta_base.iterdir() if c.is_dir()]
         print('\nElige una de las siguientes Categorias:\n**********')
         categ_lista = []
@@ -82,7 +82,7 @@ def elegir_categoria():
 
 def elegir_receta(categoria):
     correcto = False
-    while correcto == False:
+    while not correcto:
         ruta_nva = Path(ruta_base,categoria)
         receta_ruta = [r for r in ruta_nva.iterdir() if r.is_file()]
         print('\nElige una de las siguientes Recetas:\n**********')
@@ -107,7 +107,7 @@ def eliminar_categoria(categoria):
         print('Ha sido eliminada con exito.')
 
 
-def eliminar_receta(categoria,receta):
+def eliminar_receta(categoria, receta):
     receta_ext = str(receta) + '.txt'
     archivo = Path(ruta_base, categoria, receta_ext)
     confirmacion = input(f'Se eliminara la receta {receta.upper()}.'
@@ -117,9 +117,9 @@ def eliminar_receta(categoria,receta):
         print('Ha sido eliminada con exito.')
 
 
-def mostrar_contenido(categoria,receta):
+def mostrar_contenido(categoria, receta):
     receta_ext = str(receta)+'.txt'
-    archivo = Path(ruta_base,categoria,receta_ext)
+    archivo = Path(ruta_base, categoria, receta_ext)
     print('\n----------------------------')
     print(archivo.read_text())
     input('\npresiona enter para regresar al menu')
@@ -127,7 +127,7 @@ def mostrar_contenido(categoria,receta):
 
 # MENU*
 en_linea = True
-while en_linea == True:
+while en_linea:
     system('cls')
     menu = Path(ruta_base,'menu.txt')
     opcion = input(menu.read_text()).lower()
@@ -147,7 +147,7 @@ while en_linea == True:
         if confirmacion == 's':
             categoria = elegir_categoria()
             receta = elegir_receta(categoria)
-            eliminar_receta(categoria,receta)
+            eliminar_receta(categoria, receta)
         else:
             break
     elif opcion == '5' or opcion == 'eliminar':

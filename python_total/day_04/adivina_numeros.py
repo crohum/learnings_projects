@@ -12,7 +12,6 @@ La instruccion para este ejercicio es:
 * En cualquiera de esos casos, debe pedir otro numero, hasta que adivine o se acaben los intentos
 * Si el jugador adivina "?", le avisa que gano y en cuantos intentos.
 """
-
 from random import randint
 
 

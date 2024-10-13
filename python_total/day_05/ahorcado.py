@@ -14,7 +14,19 @@ from random import choice
 
 
 # ELEGIR PALABRA
-palabras_adivinar = ['Bulbasaur','Ivysaur','Venusaur','Charmander','Charmeleon','Charizard','Squirtle','Wartortle','Blastoise','Caterpie','Metapod','Butterfree','Weedle','Kakuna','Beedrill','Pidgey','Pidgeotto','Pidgeot','Rattata','Raticate','Spearow','Fearow','Ekans','Arbok','Pikachu','Seel','Dewgong','Grimer','Muk','Shellder','Cloyster','Gastly','Haunter','Gengar','Onix','Drowzee','Hypno','Krabby','Kingler','Voltorb','Electrode','Exeggcute','Exeggutor','Cubone','Marowak','Hitmonlee','Hitmonchan','Lickitung','Koffing','Weezing','Rhyhorn','Rhydon','Chansey','Tangela','Kangaskhan','Horsea','Seadra','Goldeen','Seaking','Staryu','Starmie','MrMime','Scyther','Jynx','Electabuzz','Magmar','Pinsir','Tauros','Magikarp','Gyarados','Lapras','Ditto','Eevee','Vaporeon','Jolteon','Flareon','Porygon','Omanyte','Omastar','Kabuto','Kabutops','Aerodactyl','Snorlax','Articuno','Zapdos','Moltres','Dratini','Dragonair','Dragonite','Mewtwo','Mew']
+palabras_adivinar = ['Bulbasaur', 'Ivysaur', 'Venusaur', 'Charmander', 'Charmeleon', 'Charizard',
+                     'Squirtle', 'Wartortle', 'Blastoise', 'Caterpie', 'Metapod', 'Butterfree',
+                     'Weedle', 'Kakuna', 'Beedrill', 'Pidgey', 'Pidgeotto', 'Pidgeot', 'Rattata',
+                     'Raticate', 'Spearow', 'Fearow', 'Ekans', 'Arbok', 'Pikachu', 'Seel', 'Dewgong',
+                     'Grimer', 'Muk', 'Shellder', 'Cloyster', 'Gastly', 'Haunter', 'Gengar', 'Onix',
+                     'Drowzee', 'Hypno', 'Krabby', 'Kingler', 'Voltorb', 'Electrode', 'Exeggcute',
+                     'Exeggutor', 'Cubone', 'Marowak', 'Hitmonlee', 'Hitmonchan', 'Lickitung',
+                     'Koffing', 'Weezing', 'Rhyhorn', 'Rhydon', 'Chansey', 'Tangela', 'Kangaskhan',
+                     'Horsea', 'Seadra', 'Goldeen', 'Seaking', 'Staryu', 'Starmie', 'MrMime', 'Scyther',
+                     'Jynx', 'Electabuzz', 'Magmar', 'Pinsir', 'Tauros', 'Magikarp', 'Gyarados',
+                     'Lapras', 'Ditto', 'Eevee', 'Vaporeon', 'Jolteon', 'Flareon', 'Porygon', 'Omanyte',
+                     'Omastar', 'Kabuto', 'Kabutops', 'Aerodactyl', 'Snorlax', 'Articuno', 'Zapdos',
+                     'Moltres', 'Dratini', 'Dragonair', 'Dragonite', 'Mewtwo', 'Mew']
 
 
 # MAPEO EN BLANCO
@@ -32,28 +44,33 @@ print(adivinando)
 
 # REVISION
 def revision():
+    global vidas, ganador
     letra = input('\nElige una letra o adivina el Pokémon:  ').upper()
     if list(letra) == x_adivinar:
         ganador = True
-        return ganador
+
     else:
         contador = 0
+        error = True
         while contador != len(x_adivinar):
-            for l in x_adivinar:
-                if l == letra:
+            for x in x_adivinar:
+                if x == letra:
                     adivinando[contador] = letra
                     contador += 1
+                    error = False
                 else:
                     usadas.add(letra)
-                    contador +=1
+                    contador += 1
+            if error:
+                vidas -= 1
         return adivinando
 
 
 # CHEQUEOS
-while vidas > 0 and ganador == False:
+while vidas > 0 and not ganador:
     revision()
     print(adivinando)
-    print(f'\nhas usado: {usadas} y te quedan {vidas} intentos.')
+    print(f'\nHas usado: {usadas} y te quedan {vidas} intentos.')
 
     if adivinando == x_adivinar:
         ganador = True
