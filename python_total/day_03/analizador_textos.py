@@ -5,7 +5,7 @@ La instruccion para este ejercicio es:
 * Debe pedir 3 letras a su eleccion.
 * El programa tiene que analizar el texto y devolver en pantalla:
     - Cuantas veces aparece cada letra.
-    - Cuantas palabras hay en todo el texto.
+    - Cuantas palabras hay en el texto.
     - Informar cual es la primera y ultima letra del texto, asi como en que palabras aparecen.
     - Mostrar el texto de forma invertida.
     - Decir si la palabra "Python" aparece en el texto.

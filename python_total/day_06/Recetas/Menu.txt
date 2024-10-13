@@ -1,0 +1,10 @@
+Elige una de las siguientes opciones, escribiendo la CLAVE o el NUMERO de la accion que desear realizar.
+
+1 ) LEER receta existente.
+2 ) CREAR receta nueva.
+3 ) NUEVA categoria de recetas.
+4 ) BORRAR receta.
+5 ) ELIMINAR categoria de recetas.
+6 ) SALIR del programa.
+
+Quiero: 
