@@ -17,8 +17,11 @@ CREATE TABLE companies(
 );
 
 ALTER TABLE users
+ADD company_id varchar(100);
+
+ALTER TABLE users
 ADD CONSTRAINT fk_companies
-FOREIGN KEY (company_id) REFERENCES companies(company_id)
+FOREIGN KEY (company_id) REFERENCES companies(company_id);
 
 
 -- Relacion de tablas R[N : M]
