@@ -1,4 +1,6 @@
-""" Genera los numeros de cada categoria del turnero: "menu_principal.py". """
+"""
+Genera los numeros de cada categoria del turnero: "menu_principal.py".
+"""
 import os
 
 
