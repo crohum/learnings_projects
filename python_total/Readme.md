@@ -1,6 +1,6 @@
 #
 > [ENG] This folder contains learning's activities,  
-> from _["Python TOTAL"](https://www.udemy.com/course/python-total)_ Udemy course by _[Federico Garay](https://github.com/fede-garay)_.
+> from _["Python TOTAL"](https://www.udemy.com/course/python-total)_ course by _[Federico Garay](https://github.com/fede-garay)_.
 #
 
 #

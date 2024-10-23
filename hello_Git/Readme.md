@@ -1,6 +1,6 @@
 #
 > [ENG] This folder contains learning's activities,  
-> from _["git & GitHub desde cero"](https://youtu.be/3GymExBkKjE?si=1xdrhtiIrWGbWhD7)_ youtube video by _[Brais Moure](https://github.com/mouredev)_.
+> from _["git & GitHub desde cero"](https://youtu.be/3GymExBkKjE?si=1xdrhtiIrWGbWhD7)_ video by _[Brais Moure](https://github.com/mouredev)_.
 #
 
 #
