@@ -1,4 +1,4 @@
-* This directory contains only SQL's commands.
+* This directory contains only SQL's commands.  
   (nothing more inside them)
 #
 > [ENG] This folder contains learning's activities,  
