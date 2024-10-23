@@ -1,0 +1,11 @@
+Nos alegra tenerte hoy en Farmacia Python, para un mejor servicio,
+por favor selecciona el departamento que deseas visitar:
+
+| --------------|-------------------|
+|  Opcion		|     Departamento	|
+| --------------|-------------------|
+|     [1] -		| Atencion Medica.	|
+|     [2] -		| Medicamentos.		|
+|     [3] -		| Perfumeria.		|
+|     [4] -		| Cosmeticos.		|
+| --------------|-------------------|
