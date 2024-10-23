@@ -11,7 +11,6 @@ La instruccion para este ejercicio es:
 * Finalmente tiene que imprimir el ticket de consumo
 * Adicional, debe tener una calculadora funcional
 """
-
 import random
 import tkinter
 from tkinter import *
