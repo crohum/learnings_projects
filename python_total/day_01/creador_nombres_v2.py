@@ -17,6 +17,7 @@ limpiar con un boton especifico."""
 import random
 import tkinter
 from tkinter import *
+from python_total.day_01.estilos import Fonts, Color, TextColor
 
 
 # listas de nombres
@@ -84,7 +85,7 @@ aplicacion.geometry('712x350')
 
 
 # evitar maximizar
-aplicacion.resizable(0, 0)
+aplicacion.resizable(FALSE, FALSE)
 
 
 # titulo
@@ -97,7 +98,7 @@ aplicacion.iconphoto(True, icono)
 
 
 # color de fondo de la ventana
-aplicacion.config(bg='#2d572c')
+aplicacion.config(bg=Color.PRIMARIO.value)
 
 
 # panel superior
@@ -110,9 +111,9 @@ panel_superior.pack(side=TOP)
 # titulo del panel superior
 etiqueta_titulo = Label(panel_superior,
                         text='Generador Fantastico de Nombres',
-                        fg='white',
-                        font=('Old London', 40),
-                        bg='#274227',
+                        fg=TextColor.DESTACADO.value,
+                        font=(Fonts.TITULO.value, 40),
+                        bg=Color.DESTACADO.value,
                         width=25)
 etiqueta_titulo.grid(row=0, column=0)
 
@@ -120,7 +121,7 @@ etiqueta_titulo.grid(row=0, column=0)
 # panel izquierdo
 panel_izquierdo = Frame(aplicacion,
                         bd=1,
-                        bg='#2d572c',
+                        bg=Color.PRIMARIO.value,
                         relief=FLAT)
 panel_izquierdo.pack(side=LEFT)
 
@@ -135,9 +136,9 @@ panel_instrucciones.pack(side=TOP)
 # indicaciones
 indicaciones = Label(panel_instrucciones,
                      text='Presiona cada uno de los botones,\npara obtener un nombre genial.',
-                     fg='gray',
-                     font=('Baskerville Old Face', 16),
-                     bg='#274227',
+                     fg=TextColor.PRIMARIO.value,
+                     font=(Fonts.TEXTO.value, 16),
+                     bg=Color.DESTACADO.value,
                      width=30)
 indicaciones.grid(row=0, column=0)
 
@@ -145,7 +146,7 @@ indicaciones.grid(row=0, column=0)
 # panel interior con botones
 panel_botones = Frame(panel_izquierdo,
                       bd=1,
-                      bg='#2d572c',
+                      bg=Color.PRIMARIO.value,
                       relief=FLAT)
 panel_botones.pack(side=TOP)
 
@@ -158,9 +159,9 @@ filas = 0
 for boton in botones:
     boton = Button(panel_botones,
                    text=boton.title(),
-                   font=('Book Antiqua', 14, 'bold'),
-                   fg='black',
-                   bg='azure4',
+                   font=(Fonts.BOTONES.value, 14, 'bold'),
+                   fg=TextColor.SECUNDARIO.value,
+                   bg=Color.BOTONES.value,
                    bd=4,
                    width=9)
     boton.grid(row=filas, column=0, padx=6, pady=5)
@@ -174,9 +175,9 @@ filas = 0
 for boton in botones_abajo:
     boton = Button(panel_izquierdo,
                    text=boton.title(),
-                   font=('Book Antiqua', 14, 'bold'),
-                   fg='black',
-                   bg='azure4',
+                   font=(Fonts.BOTONES.value, 14, 'bold'),
+                   fg=TextColor.SECUNDARIO.value,
+                   bg=Color.BOTONES.value,
                    bd=4,
                    width=9)
     boton.pack(side=RIGHT, padx=10)
@@ -198,27 +199,27 @@ var_creature_text = StringVar()
 var_item_text = StringVar()
 
 power_text_box = Entry(panel_botones,
-                       font=('Book Antiqua', 16, 'bold'),
+                       font=(Fonts.BOTONES.value, 16, 'bold'),
                        bd=3,
-                       bg='#c2c2c2',
+                       bg=Color.SECUNDARIO.value,
                        width=19,
                        state='readonly',
                        textvariable=var_power_text)
 power_text_box.grid(row=0, column=1, padx=8)
 
 creature_text_box = Entry(panel_botones,
-                          font=('Book Antiqua', 16, 'bold'),
+                          font=(Fonts.BOTONES.value, 16, 'bold'),
                           bd=3,
-                          bg='#c2c2c2',
+                          bg=Color.SECUNDARIO.value,
                           width=19,
                           state='readonly',
                           textvariable=var_creature_text)
 creature_text_box.grid(row=1, column=1, padx=8)
 
 item_text_box = Entry(panel_botones,
-                      font=('Book Antiqua', 16, 'bold'),
+                      font=(Fonts.BOTONES.value, 16, 'bold'),
                       bd=3,
-                      bg='#c2c2c2',
+                      bg=Color.SECUNDARIO.value,
                       width=19,
                       state='readonly',
                       textvariable=var_item_text)
@@ -228,14 +229,14 @@ item_text_box.grid(row=2, column=1, padx=8)
 # panel derecho
 panel_derecho = Frame(aplicacion,
                       bd=1,
-                      bg='#2d572c',
+                      bg=Color.PRIMARIO.value,
                       relief=FLAT)
 panel_derecho.pack(side=TOP)
 
 
 # area de texto
 texto_final = Text(panel_derecho,
-                   font=('Dosis', 12, 'bold'),
+                   font=(Fonts.RESPUESTA.value, 12, 'bold'),
                    bd=3,
                    width=35,
                    height=13)
