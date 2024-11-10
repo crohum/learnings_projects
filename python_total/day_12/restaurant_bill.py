@@ -222,7 +222,7 @@ aplicacion.resizable(0, 0)
 
 
 # titulo
-aplicacion.title('Mi Restaurante - Sistema de Facturacion')
+aplicacion.title('Mi Restaurante - Sistema de Cobro x Consumo')
 
 
 # icono para la ventana
@@ -231,7 +231,7 @@ aplicacion.iconphoto(True, icono)
 
 
 # color de fondo de la ventana
-aplicacion.config(bg='burlywood')
+aplicacion.config(bg='DarkSlateBlue')
 
 
 # panel superior
@@ -243,10 +243,10 @@ panel_superior.pack(side=TOP)
 
 # etiqueta del titulo
 etiqueta_titulo = Label(panel_superior,
-                        text='Sistema de Facturacion',
+                        text='Sistema de Cobro de cuenta',
                         fg='azure4',
                         font=('Dosis', 58),
-                        bg='burlywood',
+                        bg='DarkSlateBlue',
                         width=27)
 etiqueta_titulo.grid(row=0, column=0)
 
@@ -308,7 +308,7 @@ panel_derecho.pack(side=RIGHT)
 panel_calculadora = Frame(panel_derecho,
                           bd=1,
                           relief=RIDGE,
-                          bg='burlywood')
+                          bg='DarkSlateBlue')
 panel_calculadora.pack()
 
 
@@ -316,7 +316,7 @@ panel_calculadora.pack()
 panel_recibo = Frame(panel_derecho,
                      bd=1,
                      relief=RIDGE,
-                     bg='burlywood')
+                     bg='DarkSlateBlue')
 panel_recibo.pack()
 
 
@@ -324,19 +324,19 @@ panel_recibo.pack()
 panel_botones = Frame(panel_derecho,
                       bd=1,
                       relief=RIDGE,
-                      bg='burlywood')
+                      bg='DarkSlateBlue')
 panel_botones.pack()
 
 
 # lista de productos
-lista_comidas = ['Pollo', 'Cordero', 'Salmon', 'Merluza', 'Kebab', 'Pozole', 'Pizza', 'Tacos']
-lista_bebidas = ['Agua', 'Coca', 'Jugo', 'Soda', 'Vino', 'Cerveza', 'Malteada', 'Cafe']
+lista_comidas = ['Pollo', 'Cordero', 'Salmon', 'Menudo', 'Tamales', 'Pozole', 'Pizza', 'Tacos']
+lista_bebidas = ['Agua', 'Coca', 'Jugo', 'Refresco', 'Vino', 'Cerveza', 'Malteada', 'Cafe']
 lista_postres = ['Helado', 'Fruta', 'Brownies', 'Flan', 'Mousse', 'Pastel', 'Pay', 'Galletas']
 
 # lista de precios
-precios_comidas = [1.32, 1.65, 2.31, 3.22, 1.22, 1.99, 2.05, 2.65]
-precios_bebidas = [0.25, 0.99, 1.21, 1.54, 1.08, 1.10, 2.00, 1.58]
-precios_postres = [1.54, 1.68, 1.32, 1.97, 2.55, 2.14, 1.94, 1.74]
+precios_comidas = [15.32, 21.65, 32.31, 43.22, 11.22, 31.99, 22.05, 2.65]
+precios_bebidas = [8.25, 6.99, 11.21, 10.54, 21.08, 9.10, 7.00, 5.58]
+precios_postres = [11.54, 9.68, 11.32, 10.97, 12.55, 22.14, 13.94, 1.74]
 
 
 # generar items de comida
