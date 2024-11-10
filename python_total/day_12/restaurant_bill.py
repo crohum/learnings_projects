@@ -12,11 +12,12 @@ La instruccion para este ejercicio es:
 * Adicional, debe tener una calculadora funcional
 """
 import random
+import datetime
 import tkinter
 from tkinter import *
 from tkinter import filedialog
 from tkinter import messagebox
-import datetime
+from python_total.day_12.estilos import Color, TextColor, Fonts
 
 
 # variable que almacena y da vida al visor de la calculadora
@@ -218,7 +219,7 @@ aplicacion.geometry('1145x560+100+100')
 
 
 # evitar maximizar
-aplicacion.resizable(0, 0)
+aplicacion.resizable(False, False)
 
 
 # titulo
@@ -231,7 +232,7 @@ aplicacion.iconphoto(True, icono)
 
 
 # color de fondo de la ventana
-aplicacion.config(bg='DarkSlateBlue')
+aplicacion.config(bg=Color.PRIMARIO.value)
 
 
 # panel superior
@@ -243,10 +244,10 @@ panel_superior.pack(side=TOP)
 
 # etiqueta del titulo
 etiqueta_titulo = Label(panel_superior,
-                        text='Sistema de Cobro de cuenta',
-                        fg='azure4',
-                        font=('Dosis', 58),
-                        bg='DarkSlateBlue',
+                        text="Restaurant - Guest's bill",
+                        fg=TextColor.DESTACADO.value,
+                        font=(Fonts.TITULOS.value, 54),
+                        bg=Color.PRIMARIO.value,
                         width=27)
 etiqueta_titulo.grid(row=0, column=0)
 
@@ -262,7 +263,7 @@ panel_izquierdo.pack(side=LEFT)
 panel_costos = Frame(panel_izquierdo,
                      bd=1,
                      relief=FLAT,
-                     bg='azure4',
+                     bg=Color.SECUNDARIO.value,
                      padx=50)
 panel_costos.pack(side=BOTTOM)
 
@@ -270,30 +271,30 @@ panel_costos.pack(side=BOTTOM)
 # panel comidas
 panel_comidas = LabelFrame(panel_izquierdo,
                            text='Comidas',
-                           font=('Dosis', 19, 'bold'),
+                           font=(Fonts.TITULOS.value, 19, 'bold'),
                            bd=1,
                            relief=GROOVE,
-                           fg='azure4')
+                           fg=TextColor.DESTACADO.value)
 panel_comidas.pack(side=LEFT)
 
 
 # panel bebidas
 panel_bebidas = LabelFrame(panel_izquierdo,
                            text='Bebidas',
-                           font=('Dosis', 19, 'bold'),
+                           font=(Fonts.TITULOS.value, 19, 'bold'),
                            bd=1,
                            relief=GROOVE,
-                           fg='azure4')
+                           fg=TextColor.DESTACADO.value)
 panel_bebidas.pack(side=LEFT)
 
 
 # panel postres
 panel_postres = LabelFrame(panel_izquierdo,
                            text='Postres',
-                           font=('Dosis', 19, 'bold'),
+                           font=(Fonts.TITULOS.value, 19, 'bold'),
                            bd=1,
                            relief=GROOVE,
-                           fg='azure4')
+                           fg=TextColor.DESTACADO.value)
 panel_postres.pack(side=LEFT)
 
 
@@ -308,7 +309,7 @@ panel_derecho.pack(side=RIGHT)
 panel_calculadora = Frame(panel_derecho,
                           bd=1,
                           relief=RIDGE,
-                          bg='DarkSlateBlue')
+                          bg=Color.PRIMARIO.value)
 panel_calculadora.pack()
 
 
@@ -316,7 +317,7 @@ panel_calculadora.pack()
 panel_recibo = Frame(panel_derecho,
                      bd=1,
                      relief=RIDGE,
-                     bg='DarkSlateBlue')
+                     bg=Color.PRIMARIO.value)
 panel_recibo.pack()
 
 
@@ -324,7 +325,7 @@ panel_recibo.pack()
 panel_botones = Frame(panel_derecho,
                       bd=1,
                       relief=RIDGE,
-                      bg='DarkSlateBlue')
+                      bg=Color.PRIMARIO.value)
 panel_botones.pack()
 
 
@@ -350,7 +351,7 @@ for comida in lista_comidas:
     variables_comida[contador] = IntVar()
     comida = Checkbutton(panel_comidas,
                          text=comida.title(),
-                         font=('Dosis', 19, 'bold'),
+                         font=(Fonts.TEXTOS.value, 19, 'bold'),
                          onvalue=1, offvalue=0,
                          variable=variables_comida[contador],
                          command=revisar_check)
@@ -383,7 +384,7 @@ for bebida in lista_bebidas:
     variables_bebida[contador] = IntVar()
     bebida = Checkbutton(panel_bebidas,
                          text=bebida.title(),
-                         font=('Dosis', 19, 'bold'),
+                         font=(Fonts.TEXTOS.value, 19, 'bold'),
                          onvalue=1, offvalue=0,
                          variable=variables_bebida[contador],
                          command=revisar_check)
@@ -416,7 +417,7 @@ for postre in lista_postres:
     variables_postre[contador] = IntVar()
     postre = Checkbutton(panel_postres,
                          text=postre.title(),
-                         font=('Dosis', 19, 'bold'),
+                         font=(Fonts.TEXTOS.value, 19, 'bold'),
                          onvalue=1, offvalue=0,
                          variable=variables_postre[contador],
                          command=revisar_check)
@@ -449,13 +450,13 @@ var_total = StringVar()
 # etiquetas de costo y campos de entrada
 etiqueta_costo_comida = Label(panel_costos,
                               text='Costo Comidas:',
-                              font=('Dosis', 12, 'bold'),
-                              bg='azure4',
-                              fg='white')
+                              font=(Fonts.TEXTOS.value, 12, 'bold'),
+                              bg=Color.SECUNDARIO.value,
+                              fg=TextColor.SECUNDARIO.value)
 etiqueta_costo_comida.grid(row=0, column=0)
 
 texto_costo_comida = Entry(panel_costos,
-                           font=('Dosis', 12, 'bold'),
+                           font=(Fonts.TEXTBOX.value, 12, 'bold'),
                            bd=1,
                            width=10,
                            state='readonly',
@@ -465,13 +466,13 @@ texto_costo_comida.grid(row=0, column=1, padx=41)
 
 etiqueta_costo_bebida = Label(panel_costos,
                               text='Costo Bebidas:',
-                              font=('Dosis', 12, 'bold'),
-                              bg='azure4',
-                              fg='white')
+                              font=(Fonts.TEXTOS.value, 12, 'bold'),
+                              bg=Color.SECUNDARIO.value,
+                              fg=TextColor.SECUNDARIO.value)
 etiqueta_costo_bebida.grid(row=1, column=0)
 
 texto_costo_bebida = Entry(panel_costos,
-                           font=('Dosis', 12, 'bold'),
+                           font=(Fonts.TEXTBOX.value, 12, 'bold'),
                            bd=1,
                            width=10,
                            state='readonly',
@@ -481,13 +482,13 @@ texto_costo_bebida.grid(row=1, column=1, padx=41)
 
 etiqueta_costo_postre = Label(panel_costos,
                               text='Costo Postres:',
-                              font=('Dosis', 12, 'bold'),
-                              bg='azure4',
-                              fg='white')
+                              font=(Fonts.TEXTOS.value, 12, 'bold'),
+                              bg=Color.SECUNDARIO.value,
+                              fg=TextColor.SECUNDARIO.value)
 etiqueta_costo_postre.grid(row=2, column=0)
 
 texto_costo_postre = Entry(panel_costos,
-                           font=('Dosis', 12, 'bold'),
+                           font=(Fonts.TEXTBOX.value, 12, 'bold'),
                            bd=1,
                            width=10,
                            state='readonly',
@@ -497,13 +498,13 @@ texto_costo_postre.grid(row=2, column=1, padx=41)
 
 etiqueta_subtotal = Label(panel_costos,
                           text='Sub-Total:',
-                          font=('Dosis', 12, 'bold'),
-                          bg='azure4',
-                          fg='white')
+                          font=(Fonts.TEXTOS.value, 12, 'bold'),
+                          bg=Color.SECUNDARIO.value,
+                          fg=TextColor.SECUNDARIO.value)
 etiqueta_subtotal.grid(row=0, column=2)
 
 texto_subtotal = Entry(panel_costos,
-                       font=('Dosis', 12, 'bold'),
+                       font=(Fonts.TEXTBOX.value, 12, 'bold'),
                        bd=1,
                        width=10,
                        state='readonly',
@@ -513,13 +514,13 @@ texto_subtotal.grid(row=0, column=3, padx=41)
 
 etiqueta_impuestos = Label(panel_costos,
                            text='Impuestos:',
-                           font=('Dosis', 12, 'bold'),
-                           bg='azure4',
-                           fg='white')
+                           font=(Fonts.TEXTOS.value, 12, 'bold'),
+                           bg=Color.SECUNDARIO.value,
+                           fg=TextColor.SECUNDARIO.value)
 etiqueta_impuestos.grid(row=1, column=2)
 
 texto_impuestos = Entry(panel_costos,
-                        font=('Dosis', 12, 'bold'),
+                        font=(Fonts.TEXTBOX.value, 12, 'bold'),
                         bd=1,
                         width=10,
                         state='readonly',
@@ -529,13 +530,13 @@ texto_impuestos.grid(row=1, column=3, padx=41)
 
 etiqueta_total = Label(panel_costos,
                        text='Total:',
-                       font=('Dosis', 12, 'bold'),
-                       bg='azure4',
-                       fg='white')
+                       font=(Fonts.TEXTOS.value, 12, 'bold'),
+                       bg=Color.SECUNDARIO.value,
+                       fg=TextColor.SECUNDARIO.value)
 etiqueta_total.grid(row=2, column=2)
 
 texto_total = Entry(panel_costos,
-                    font=('Dosis', 12, 'bold'),
+                    font=(Fonts.TEXTBOX.value, 12, 'bold'),
                     bd=1,
                     width=10,
                     state='readonly',
@@ -551,9 +552,9 @@ columnas = 0
 for boton in botones:
     boton = Button(panel_botones,
                    text=boton.title(),
-                   font=('Dosis', 14, 'bold'),
-                   fg='white',
-                   bg='azure4',
+                   font=(Fonts.TEXTOS.value, 14, 'bold'),
+                   fg=TextColor.SECUNDARIO.value,
+                   bg=Color.SECUNDARIO.value,
                    bd=1,
                    width=9)
     boton.grid(row=0, column=columnas)
@@ -568,7 +569,7 @@ boton_creado[3].config(command=reiniciar)
 
 # area de recibo
 texto_recibo = Text(panel_recibo,
-                    font=('Dosis', 12, 'bold'),
+                    font=(Fonts.TEXTBOX.value, 12, 'bold'),
                     bd=1,
                     width=42,
                     height=12)
@@ -577,7 +578,7 @@ texto_recibo.grid(row=0, column=0)
 
 # calculadora
 visor_calculadora = Entry(panel_calculadora,
-                          font=('Dosis', 16, 'bold'),
+                          font=(Fonts.TEXTBOX.value, 16, 'bold'),
                           width=38,
                           bd=1)
 visor_calculadora.grid(row=0, column=0, columnspan=4)
@@ -593,9 +594,9 @@ columna = 0
 for boton in botones_calculadora:
     boton = Button(panel_calculadora,
                    text=boton.title(),
-                   font=('Dosis', 16, 'bold'),
-                   fg='white',
-                   bg='azure4',
+                   font=(Fonts.TEXTOS.value, 16, 'bold'),
+                   fg=TextColor.SECUNDARIO.value,
+                   bg=Color.SECUNDARIO.value,
                    bd=1, width=8)
     boton.grid(row=fila, column=columna)
     botones_guardados.append(boton)
