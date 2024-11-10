@@ -4,6 +4,7 @@
 
 import tkinter
 from tkinter import *
+from python_total.day_03.estilos import Color, TextColor, Fonts
 
 
 # iniciar tkinter
@@ -12,7 +13,7 @@ aplicacion = Tk()
 
 # tamaño de la ventana
 aplicacion.geometry('1210x750')
-aplicacion.resizable(0, 0)
+aplicacion.resizable(False, False)
 
 
 # titulo
@@ -25,7 +26,7 @@ aplicacion.iconphoto(True, icono)
 
 
 # color de fondo de la ventana
-aplicacion.config(bg='#64433c')
+aplicacion.config(bg=Color.SECUNDARIO.value)
 
 
 # panel superior
@@ -38,9 +39,9 @@ panel_superior.pack(side=TOP, pady=5)
 # etiqueta del titulo
 etiqueta_titulo = Label(panel_superior,
                         text='Analizador de Texto',
-                        fg='azure4',
+                        fg=TextColor.DESTACADO.value,
                         font=('Baskerville Old Face', 58),
-                        bg='#69371c',
+                        bg=Color.PRIMARIO.value,
                         width=27)
 etiqueta_titulo.grid(row=0, column=0)
 
@@ -53,16 +54,16 @@ panel_izquierdo.pack(side=LEFT, padx=5)
 
 etiqueta_instrucciones = Label(panel_izquierdo,
                                text='Ingresa el texto a ser analizado en esta area.',
-                               fg='white',
-                               font=('Baskerville Old Face', 14),
-                               bg='#69371c',
+                               fg=TextColor.PRIMARIO.value,
+                               font=(Fonts.TEXTO.value, 14),
+                               bg=Color.PRIMARIO.value,
                                width=35)
 etiqueta_instrucciones.grid(row=0, column=0)
 
 
 # area de entrada del texto
 texto_entrada = Text(panel_izquierdo,
-                     font=('Dosis', 12, 'bold'),
+                     font=(Fonts.TEXTBOX.value, 12, 'bold'),
                      bd=2,
                      width=40,
                      height=30)
@@ -123,7 +124,7 @@ panel_derecho.pack(side=LEFT, padx=5)
 
 # area de salida
 texto_salida = Text(panel_derecho,
-                    font=('Dosis', 12, 'bold'),
+                    font=(Fonts.TEXTBOX.value, 12, 'bold'),
                     bd=2,
                     width=40,
                     height=31)
