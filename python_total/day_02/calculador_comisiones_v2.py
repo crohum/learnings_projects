@@ -12,9 +12,10 @@ El texto se mostrara en una caja de texto, respetando las instrucciones; y este 
 limpiar con un boton especifico."""
 
 
+import datetime
 import tkinter
 from tkinter import *
-import datetime
+from python_total.day_02.estilos import Color, TextColor, Fonts
 
 
 def imprimir(ventas, nombre):
@@ -81,7 +82,7 @@ aplicacion = Tk()
 
 # tamaño de la ventana
 aplicacion.geometry('610x350')
-aplicacion.resizable(0, 0)
+aplicacion.resizable(False, False)
 
 
 # titulo
@@ -94,7 +95,7 @@ aplicacion.iconphoto(True, icono)
 
 
 # color de fondo de la ventana
-aplicacion.config(bg='royalblue')
+aplicacion.config(bg=Color.PRIMARIO.value)
 
 
 # panel superior
@@ -107,9 +108,9 @@ panel_superior.pack(side=TOP, pady=5)
 # etiqueta del titulo
 etiqueta_titulo = Label(panel_superior,
                         text='Sistema de Comisiones',
-                        fg='azure4',
-                        font=('Lucida Console', 26, 'bold'),
-                        bg='navy',
+                        fg=TextColor.PRIMARIO.value,
+                        font=(Fonts.TITULOS.value, 26, 'bold'),
+                        bg=Color.DESTACADO.value,
                         width=27)
 etiqueta_titulo.grid(row=0, column=0)
 
@@ -127,9 +128,9 @@ instrucciones = Label(panel_medio,
                            'para conocer el monto obtenido por la comision\n'
                            'correspondiente a tus ventas de este mes.\n'
                            'Por favor ingresa los datos que se piden.',
-                      fg='azure4',
-                      font=('Lucida Console', 12,),
-                      bg='navy',
+                      fg=TextColor.PRIMARIO.value,
+                      font=(Fonts.TEXTO.value, 12,),
+                      bg=Color.DESTACADO.value,
                       width=59)
 instrucciones.grid(row=0, column=0)
 
@@ -137,7 +138,7 @@ instrucciones.grid(row=0, column=0)
 # panel izquierdo
 panel_izquierdo = Frame(aplicacion,
                         bd=1,
-                        bg='navy',
+                        bg=Color.DESTACADO.value,
                         relief=FLAT)
 panel_izquierdo.pack(side=LEFT, padx=5)
 
@@ -150,21 +151,21 @@ var_ventas = StringVar()
 # panel entradas
 panel_entradas = Frame(panel_izquierdo,
                        bd=1,
-                       bg='navy',
+                       bg=Color.DESTACADO.value,
                        relief=FLAT)
 panel_entradas.pack(side=TOP)
 
 
 etiqueta_nombre = Label(panel_entradas,
                         text='Nombre Completo:',
-                        font=('Lucida Console', 12, 'bold'),
-                        fg='azure4',
-                        bg='navy')
+                        font=(Fonts.TEXTO.value, 12, 'bold'),
+                        fg=TextColor.PRIMARIO.value,
+                        bg=Color.DESTACADO.value)
 etiqueta_nombre.grid(row=0, column=0, pady=5)
 
 
 texto_nombre = Entry(panel_entradas,
-                     font=('Lucida Console', 12, 'bold'),
+                     font=(Fonts.TEXTBOX.value, 12, 'bold'),
                      bd=1,
                      width=25,
                      textvariable=var_nombre)
@@ -173,14 +174,14 @@ texto_nombre.grid(row=1, column=0, padx=10, pady=10)
 
 etiqueta_ventas = Label(panel_entradas,
                         text='Ventas durante el mes:',
-                        font=('Lucida Console', 12, 'bold'),
-                        fg='azure4',
-                        bg='navy')
+                        font=(Fonts.TEXTO.value, 12, 'bold'),
+                        fg=TextColor.PRIMARIO.value,
+                        bg=Color.DESTACADO.value)
 etiqueta_ventas.grid(row=2, column=0, pady=5)
 
 
 texto_ventas = Entry(panel_entradas,
-                     font=('Lucida Console', 12, 'bold'),
+                     font=(Fonts.TEXTBOX.value, 12, 'bold'),
                      bd=1,
                      width=25,
                      textvariable=var_ventas)
@@ -190,7 +191,7 @@ texto_ventas.grid(row=3, column=0, padx=10, pady=10)
 # panel botones
 panel_botones = Frame(panel_izquierdo,
                       bd=1,
-                      bg='navy',
+                      bg=Color.DESTACADO.value,
                       relief=FLAT)
 panel_botones.pack(side=BOTTOM)
 
@@ -202,9 +203,9 @@ filas = 0
 for boton in botones:
     boton = Button(panel_botones,
                    text=boton.title(),
-                   font=('Arial', 14, 'bold'),
-                   fg='black',
-                   bg='azure4',
+                   font=(Fonts.BOTONES.value, 14, 'bold'),
+                   fg=TextColor.SECUNDARIO.value,
+                   bg=Color.BOTONES.value,
                    bd=4,
                    width=9)
     boton.pack(side=RIGHT, padx=10, pady=10)
@@ -220,14 +221,14 @@ boton_creado[1].config(command=verificar_nombre)
 # panel derecho
 panel_derecho = Frame(aplicacion,
                       bd=1,
-                      bg='navy',
+                      bg=Color.DESTACADO.value,
                       relief=FLAT)
 panel_derecho.pack(side=LEFT, padx=5)
 
 
 # area de texto
 texto_final = Text(panel_derecho,
-                   font=('Lucida Console', 12, 'bold'),
+                   font=(Fonts.TEXTBOX.value, 12, 'bold'),
                    bd=3,
                    width=24,
                    height=12)
