@@ -1,4 +1,4 @@
-## [ENG] Dodge Asteroids Game.
+## [ENG] Restaurant Guest's bill.
 This game was build in Python with Pygame framework.  
 
 By selecting each checkbox and put the quantity consumed, the program calculates the bill's totals and prints the receipt.
