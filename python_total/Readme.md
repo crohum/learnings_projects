@@ -11,7 +11,7 @@
 * Juego Invasion espacial ----day 10
 * Extractor web de Libros ----day 11
 * Gestor cuenta Restaurante -day 12
-* Asistente virtual viz voz ---- day 13
+* Asistente virtual de voz ---- day 13
 #
 > [ENG] This folder contains learning's activities,  
 > from _["Python TOTAL"](https://www.udemy.com/course/python-total)_ course by _[Federico Garay](https://github.com/fede-garay)_.
