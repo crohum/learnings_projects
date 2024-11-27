@@ -48,7 +48,8 @@ while not en_linea:
     saludo = Path(ruta_base, 'turnero.txt')
     print(saludo.read_text())
     opcion = seleccion()
-    if opcion:
+    # si quitamos el comparativo a True, el programa falla
+    if opcion == True:
         en_linea = opcion
         break
     elif opcion == 'No valido':
